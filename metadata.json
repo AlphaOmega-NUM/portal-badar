@@ -1,0 +1,6 @@
+{
+  "name": "Portal Rasmi BADAR | Badan Dakwah & Rohani",
+  "description": "Portal Rasmi Badan Dakwah & Rohani (BADAR) dan Sudut Hadis 40 Imam An-Nawawi (Modul Penghayatan KPM) untuk program sekolah.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

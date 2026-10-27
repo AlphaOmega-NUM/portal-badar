@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Rasmi BADAR | Badan Dakwah & Rohani</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Gaya Neumorphism Sage Gray -->
+    <style>
+        :root {
+            --bg-base: #e6eee8;
+            --shadow-light: #ffffff;
+            --shadow-dark: #c1ccc4;
+            --teal-brand: #0f766e;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-base);
+            color: #27372d;
+        }
+
+        /* Timbul / Raised */
+        .neu-raised {
+            background: var(--bg-base);
+            box-shadow: 8px 8px 18px var(--shadow-dark), 
+                        -8px -8px 18px var(--shadow-light);
+        }
+
+        .neu-raised-sm {
+            background: var(--bg-base);
+            box-shadow: 4px 4px 10px var(--shadow-dark), 
+                        -4px -4px 10px var(--shadow-light);
+        }
+
+        /* Tenggelam / Inset */
+        .neu-inset {
+            background: var(--bg-base);
+            box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+                        inset -4px -4px 8px var(--shadow-light);
+        }
+
+        /* Butang Neumorphic Biasa */
+        .neu-btn {
+            background: var(--bg-base);
+            box-shadow: 5px 5px 12px var(--shadow-dark), 
+                        -5px -5px 12px var(--shadow-light);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .neu-btn:hover {
+            box-shadow: 2px 2px 6px var(--shadow-dark), 
+                        -2px -2px 6px var(--shadow-light);
+            transform: translateY(1px);
+        }
+
+        .neu-btn:active {
+            box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+                        inset -3px -3px 6px var(--shadow-light);
+            color: #0f766e;
+        }
+
+        /* Butang Utama Hijau Beraksen */
+        .neu-btn-primary {
+            background: linear-gradient(145deg, #10857c, #0d6b63);
+            box-shadow: 6px 6px 15px var(--shadow-dark), 
+                        -6px -6px 15px var(--shadow-light);
+            color: white;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .neu-btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 4px 4px 10px var(--shadow-dark), 
+                        -4px -4px 10px var(--shadow-light);
+        }
+
+        .neu-btn-primary:active {
+            box-shadow: inset 3px 3px 6px #08433e, 
+                        inset -3px -3px 6px #16a398;
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- 1. NAVIGATION BAR -->
+    <header class="sticky top-4 z-40 px-4 sm:px-8 mb-6">
+        <nav class="max-w-7xl mx-auto neu-raised rounded-2xl px-6 py-4 flex items-center justify-between border border-white/40">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="neu-raised-sm w-11 h-11 rounded-xl flex items-center justify-center text-teal-800">
+                    <i class="fa-solid fa-kaaba text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="font-black text-teal-950 tracking-wider text-base sm:text-lg">BADAR</h1>
+                    <p class="text-[10px] text-teal-700 uppercase font-semibold">Badan Dakwah & Rohani</p>
+                </div>
+            </div>
+
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-teal-900">
+                <a href="#utama" class="hover:text-teal-600 transition">Utama</a>
+                <a href="#pengenalan" class="hover:text-teal-600 transition">Pengenalan</a>
+                <a href="#visimisi" class="hover:text-teal-600 transition">Visi & Misi</a>
+                <a href="#tujuan" class="hover:text-teal-600 transition">Tujuan</a>
+                
+                <!-- Butang Khas Sudut Hadis 40 di Navbar -->
+                <a href="hadis40.html" class="neu-btn-primary px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-book-quran"></i> Sudut Hadis 40
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="utama" class="py-8 sm:py-14 px-4">
+        <div class="max-w-5xl mx-auto neu-raised rounded-3xl p-8 sm:p-14 text-center border border-white/40">
+            <div class="inline-flex items-center gap-2 neu-inset px-4 py-1.5 rounded-full text-teal-800 text-xs font-bold uppercase tracking-wider mb-6">
+                <i class="fa-solid fa-moon text-teal-700"></i> Membina Sahsiah Rabbani, Memperkasa Ummah
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-teal-950 mb-4 tracking-tight leading-tight">
+                Selamat Datang ke Portal Rasmi <br class="hidden sm:inline">
+                <span class="text-teal-800">Badan Dakwah & Rohani (BADAR)</span>
+            </h1>
+
+            <p class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
+                Wadah kepimpinan murid dalam menyuburkan penghayatan Islam, mengimarahkan musolla, serta melahirkan generasi berilmu dan berakhlak mulia.
+            </p>
+
+            <!-- Butang-butang Tindakan Hero -->
+            <div class="flex flex-wrap justify-center items-center gap-4">
+                <!-- BUTANG PALING PENTING: KE SUDUT HADIS 40 -->
+                <a href="hadis40.html" class="neu-btn-primary px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base flex items-center gap-3 group">
+                    <i class="fa-solid fa-book-open-reader text-lg"></i>
+                    <span>Masuk ke Sudut Hadis 40</span>
+                    <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                </a>
+
+                <a href="#pengenalan" class="neu-btn px-6 py-3.5 rounded-2xl font-semibold text-sm text-teal-950 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-teal-700"></i> Ketahui Peranan Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PENGENALAN BADAR -->
+    <section id="pengenalan" class="py-10 px-4 max-w-7xl mx-auto">
+        <div class="neu-raised rounded-3xl p-8 sm:p-12 border border-white/40">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <!-- Ikon Hiasan Neumorphic -->
+                <div class="neu-inset w-28 h-28 sm:w-36 sm:h-36 rounded-3xl flex items-center justify-center text-teal-800 text-5xl flex-shrink-0">
+                    <i class="fa-solid fa-mosque"></i>
+                </div>
+
+                <!-- Teks Penerangan -->
+                <div class="space-y-4">
+                    <span class="neu-inset inline-block px-3.5 py-1 rounded-full text-xs font-bold text-teal-800 uppercase tracking-wider">
+                        Tentang Organisasi
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-teal-950">
+                        Pengenalan Kepada BADAR
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify sm:text-left">
+                        <strong>Badan Dakwah dan Rohani (BADAR)</strong> merupakan sebuah badan kepimpinan murid berteraskan Islam yang bernaung di bawah Panitia Pendidikan Islam dan Unit Hal Ehwal Murid (HEM). 
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify sm:text-left">
+                        BADAR berfungsi sebagai tulang belakang dalam memelihara disiplin kerohanian, menyuburkan amalan sunnah, serta bertindak sebagai <em>rakan pembimbing dakwah</em> (peer da'i) yang mendekati murid-murid lain dengan pendekatan kasih sayang, hikmah, dan nasihat yang murni.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. VISI & MISI BADAR -->
+    <section id="visimisi" class="py-10 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+            <span class="neu-inset inline-block px-3.5 py-1 rounded-full text-xs font-bold text-teal-800 uppercase tracking-widest mb-2">
+                Hala Tuju
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-teal-950">Visi & Misi BADAR</h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">Gagasan perjuangan membentuk insan yang seimbang duniawi dan ukhrawi</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Kad Visi -->
+            <div class="neu-raised rounded-3xl p-8 border border-white/40 flex flex-col justify-between">
+                <div>
+                    <div class="neu-inset w-14 h-14 rounded-2xl flex items-center justify-center text-teal-800 text-2xl mb-5">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-teal-950 mb-3">Visi BADAR</h3>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                        Melahirkan barisan generasi murid yang teguh aqidah, cemerlang sahsiah, dan berketerampilan sebagai duta dakwah yang memimpin ummah ke arah keredaan Allah SWT.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-300/40">
+                    <span class="neu-inset px-3 py-1 rounded-lg text-[11px] font-bold text-teal-800">
+                        #KaramahInsaniah
+                    </span>
+                </div>
+            </div>
+
+            <!-- Kad Misi -->
+            <div class="neu-raised rounded-3xl p-8 border border-white/40 flex flex-col justify-between">
+                <div>
+                    <div class="neu-inset w-14 h-14 rounded-2xl flex items-center justify-center text-teal-800 text-2xl mb-5">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-teal-950 mb-3">Misi BADAR</h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-teal-700 mt-0.5"></i>
+                            <span>Mengimarahkan musolla sekolah sebagai pusat ibadah, ilmu, dan penyatuan ukhuwah.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-teal-700 mt-0.5"></i>
+                            <span>Menerapkan kefahaman fardu ain, adab, dan nilai murni melalui usrah serta tazkirah berterusan.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-teal-700 mt-0.5"></i>
+                            <span>Mempromosikan budaya hidup berlandaskan Sunnah Nabawiyyah dan Al-Quran dalam kehidupan seharian.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-300/40">
+                    <span class="neu-inset px-3 py-1 rounded-lg text-[11px] font-bold text-teal-800">
+                        #DakwahBerhikmah
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TUJUAN BADAR DITUBUHKAN -->
+    <section id="tujuan" class="py-10 px-4 max-w-7xl mx-auto">
+        <div class="neu-raised rounded-3xl p-8 sm:p-12 border border-white/40">
+            <div class="text-center mb-10">
+                <span class="neu-inset inline-block px-3.5 py-1 rounded-full text-xs font-bold text-teal-800 uppercase tracking-widest mb-2">
+                    Objektif Penubuhan
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-teal-950">Tujuan BADAR Ditubuhkan</h2>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Peranan penting BADAR sebagai pemangkin persekitaran soleh di sekolah</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Tujuan 1 -->
+                <div class="neu-inset rounded-2xl p-6 space-y-2">
+                    <div class="neu-raised-sm w-10 h-10 rounded-xl flex items-center justify-center text-teal-800 font-black text-sm mb-3">
+                        01
+                    </div>
+                    <h4 class="font-bold text-teal-950 text-base">Memperkasa Ibadah Solat</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Memastikan solat fardu berjemaah diamalkan secara tertib, mendisiplinkan saf, serta menghidupkan azan dan solat sunat di musolla.
+                    </p>
+                </div>
+
+                <!-- Tujuan 2 -->
+                <div class="neu-inset rounded-2xl p-6 space-y-2">
+                    <div class="neu-raised-sm w-10 h-10 rounded-xl flex items-center justify-center text-teal-800 font-black text-sm mb-3">
+                        02
+                    </div>
+                    <h4 class="font-bold text-teal-950 text-base">Bimbingan Rakan Sebaya</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Menjadi jambatan mesra kepada murid lain yang memerlukan bimbingan membaca al-Quran, fardu ain, serta sokongan emosi berlandaskan Islam.
+                    </p>
+                </div>
+
+                <!-- Tujuan 3 -->
+                <div class="neu-inset rounded-2xl p-6 space-y-2">
+                    <div class="neu-raised-sm w-10 h-10 rounded-xl flex items-center justify-center text-teal-800 font-black text-sm mb-3">
+                        03
+                    </div>
+                    <h4 class="font-bold text-teal-950 text-base">Pembudayaan Sunnah</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Menghidupkan sunnah Rasulullah SAW seperti memberi salam, senyum, adab makan, dan penghayatan Hadis 40 dalam sahsiah harian.
+                    </p>
+                </div>
+
+                <!-- Tujuan 4 -->
+                <div class="neu-inset rounded-2xl p-6 space-y-2">
+                    <div class="neu-raised-sm w-10 h-10 rounded-xl flex items-center justify-center text-teal-800 font-black text-sm mb-3">
+                        04
+                    </div>
+                    <h4 class="font-bold text-teal-950 text-base">Mencegah Gejala Negatif</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Membantu pihak sekolah membendung masalah sosial, buli, dan perbuatan merosakkan diri melalui nasihat berhemah (amar ma'ruf nahi mungkar).
+                    </p>
+                </div>
+
+                <!-- Tujuan 5 -->
+                <div class="neu-inset rounded-2xl p-6 space-y-2">
+                    <div class="neu-raised-sm w-10 h-10 rounded-xl flex items-center justify-center text-teal-800 font-black text-sm mb-3">
+                        05
+                    </div>
+                    <h4 class="font-bold text-teal-950 text-base">Melahirkan Pemimpin Da'i</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Memberi pendedahan kepimpinan, pengurusan majlis ilmu, dan pengucapan awam kepada murid agar berani menegakkan kebenaran.
+                    </p>
+                </div>
+
+                <!-- Tujuan 6 (Inisiatif Khas) -->
+                <div class="neu-inset rounded-2xl p-6 space-y-2">
+                    <div class="neu-raised-sm w-10 h-10 rounded-xl flex items-center justify-center text-amber-800 font-black text-sm mb-3">
+                        06
+                    </div>
+                    <h4 class="font-bold text-teal-950 text-base">Penghayatan Hadis KPM</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Menyokong agenda Kementerian Pendidikan Malaysia dalam memartabatkan Modul Penghayatan Hadis 40 Imam Nawawi di peringkat sekolah.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. BANNER KHAS: JEMPUTAN KE SUDUT HADIS 40 -->
+    <section class="py-12 px-4 max-w-5xl mx-auto">
+        <div class="neu-raised rounded-3xl p-8 sm:p-12 border border-white/50 text-center space-y-6">
+            <span class="neu-inset inline-block px-4 py-1.5 rounded-full text-xs font-bold text-amber-900 uppercase tracking-widest">
+                <i class="fa-solid fa-star-and-crescent mr-1.5 text-amber-700"></i> Ruang Ilmu Istimewa
+            </span>
+
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-teal-950 tracking-tight">
+                Sudut Hadis 40 Imam An-Nawawi
+            </h2>
+
+            <p class="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+                Kami menyediakan halaman interaktif khas yang menghimpunkan kesemua <strong>42 Hadis Al-Imam An-Nawawi</strong> lengkap dengan teks Arab, maksud, huraian mendalam, pengajaran berpandukan <strong>Modul Edisi Kedua KPM</strong>, serta carian pintar.
+            </p>
+
+            <!-- BUTANG UTAMA JELAS DAN MENONJOL -->
+            <div class="pt-2">
+                <a href="hadis40.html" class="neu-btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-extrabold text-sm sm:text-base shadow-lg hover:scale-105 transition transform">
+                    <i class="fa-solid fa-book-quran text-xl"></i>
+                    <span>Buka Sudut Hadis 40 Sekarang</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer class="py-10 px-4 mt-auto">
+        <div class="max-w-7xl mx-auto neu-raised rounded-3xl p-8 border border-white/40 text-xs text-slate-600">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-extrabold text-teal-950 text-sm mb-2">BADAR Sekolah</h4>
+                    <p class="leading-relaxed">Badan Dakwah dan Rohani komited menyuburkan akhlak dan penghayatan Islam dalam kalangan warga institusi.</p>
+                </div>
+                <div>
+                    <h4 class="font-extrabold text-teal-950 text-sm mb-2">Pautan Pantas</h4>
+                    <ul class="space-y-1.5 font-medium">
+                        <li><a href="#pengenalan" class="hover:text-teal-800">Pengenalan BADAR</a></li>
+                        <li><a href="#visimisi" class="hover:text-teal-800">Visi & Misi</a></li>
+                        <li><a href="#tujuan" class="hover:text-teal-800">Tujuan Penubuhan</a></li>
+                        <li><a href="hadis40.html" class="text-teal-800 font-bold hover:underline">Halaman Sudut Hadis 40 →</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-extrabold text-teal-950 text-sm mb-2">Lokasi & Operasi</h4>
+                    <p><i class="fa-solid fa-location-dot text-teal-700 mr-1.5"></i> Musolla Utama / Bilik Gerakan BADAR</p>
+                    <p class="mt-1"><i class="fa-solid fa-hashtag text-teal-700 mr-1.5"></i> #hadis40dihatiku</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-300/40 mt-8 pt-4 text-center text-slate-500">
+                &copy; 2026 Badan Dakwah dan Rohani (BADAR). Membina Sahsiah Rabbani.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

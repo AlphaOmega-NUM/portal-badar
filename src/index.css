@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base: #e6eee8;
+  --shadow-light: #ffffff;
+  --shadow-dark: #c1ccc4;
+  --teal-brand: #0f766e;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-base);
+  color: #27372d;
+  min-height: 100vh;
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+}
+
+/* Timbul / Raised */
+.neu-raised {
+  background: var(--bg-base);
+  box-shadow: 8px 8px 18px var(--shadow-dark), 
+              -8px -8px 18px var(--shadow-light);
+}
+
+.neu-raised-sm {
+  background: var(--bg-base);
+  box-shadow: 4px 4px 10px var(--shadow-dark), 
+              -4px -4px 10px var(--shadow-light);
+}
+
+/* Tenggelam / Inset */
+.neu-inset {
+  background: var(--bg-base);
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+              inset -4px -4px 8px var(--shadow-light);
+}
+
+/* Butang Neumorphic Biasa */
+.neu-btn {
+  background: var(--bg-base);
+  box-shadow: 5px 5px 12px var(--shadow-dark), 
+              -5px -5px 12px var(--shadow-light);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.neu-btn:hover {
+  box-shadow: 2px 2px 6px var(--shadow-dark), 
+              -2px -2px 6px var(--shadow-light);
+  transform: translateY(1px);
+}
+
+.neu-btn:active, .neu-btn.active {
+  box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+              inset -3px -3px 6px var(--shadow-light);
+  color: #0f766e;
+}
+
+/* Butang Utama Hijau Beraksen */
+.neu-btn-primary {
+  background: linear-gradient(145deg, #10857c, #0d6b63);
+  box-shadow: 6px 6px 15px var(--shadow-dark), 
+              -6px -6px 15px var(--shadow-light);
+  color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.neu-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 4px 4px 10px var(--shadow-dark), 
+              -4px -4px 10px var(--shadow-light);
+}
+
+.neu-btn-primary:active {
+  box-shadow: inset 3px 3px 6px #08433e, 
+              inset -3px -3px 6px #16a398;
+  transform: translateY(1px);
+}
+
