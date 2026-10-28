@@ -7,11 +7,46 @@ import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { BadarPortal } from './components/BadarPortal';
 import { Hadis40Portal } from './components/Hadis40Portal';
+import { SettingsModal, ArabicFontSize } from './components/SettingsModal';
+import { Language } from './data/translations';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'portal' | 'hadis40'>('portal');
   const [activeHadisNo, setActiveHadisNo] = useState<number | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
+  // Bahasa (Language)
+  const [language, setLanguage] = useState<Language>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('badar_lang');
+      if (saved === 'en' || saved === 'ms') return saved;
+    }
+    return 'ms';
+  });
+
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('badar_lang', lang);
+    }
+  };
+
+  // Saiz Tulisan Arab
+  const [arabicFontSize, setArabicFontSize] = useState<ArabicFontSize>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('badar_arabic_size') as ArabicFontSize;
+      if (saved === 'normal' || saved === 'medium' || saved === 'large') return saved;
+    }
+    return 'normal';
+  });
+
+  const handleFontSizeChange = (size: ArabicFontSize) => {
+    setArabicFontSize(size);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('badar_arabic_size', size);
+    }
+  };
 
   // Tema Mod Gelap (Dark Mode)
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
@@ -130,6 +165,8 @@ export default function App() {
           onNavigateToHadis40={() => navigateToHadis40()}
           isDarkMode={isDarkMode}
           onToggleDarkMode={toggleDarkMode}
+          language={language}
+          onOpenSettings={() => setIsSettingsOpen(true)}
         />
       ) : (
         <Hadis40Portal
@@ -138,6 +175,9 @@ export default function App() {
           onSelectHadis={(no) => setActiveHadisNo(no)}
           isDarkMode={isDarkMode}
           onToggleDarkMode={toggleDarkMode}
+          language={language}
+          onOpenSettings={() => setIsSettingsOpen(true)}
+          arabicFontSize={arabicFontSize}
         />
       )}
 
@@ -156,6 +196,18 @@ export default function App() {
           <i className="fa-solid fa-arrow-up text-base"></i>
         </motion.button>
       )}
+
+      {/* Modal Sistem Tetapan */}
+      <SettingsModal
+        isOpen={isSettingsOpen}
+        onClose={() => setIsSettingsOpen(false)}
+        language={language}
+        onLanguageChange={handleLanguageChange}
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={toggleDarkMode}
+        arabicFontSize={arabicFontSize}
+        onFontSizeChange={handleFontSizeChange}
+      />
     </div>
   );
 }
