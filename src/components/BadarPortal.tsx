@@ -3,6 +3,8 @@ import { motion } from 'motion/react';
 
 interface BadarPortalProps {
   onNavigateToHadis40: () => void;
+  isDarkMode?: boolean;
+  onToggleDarkMode?: () => void;
 }
 
 const tujuanList = [
@@ -39,7 +41,11 @@ const tujuanList = [
   }
 ];
 
-export const BadarPortal: React.FC<BadarPortalProps> = ({ onNavigateToHadis40 }) => {
+export const BadarPortal: React.FC<BadarPortalProps> = ({
+  onNavigateToHadis40,
+  isDarkMode = false,
+  onToggleDarkMode
+}) => {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -106,10 +112,33 @@ export const BadarPortal: React.FC<BadarPortalProps> = ({ onNavigateToHadis40 })
             >
               <i className="fa-solid fa-book-quran"></i> Sudut Hadis 40
             </button>
+
+            {/* Butang Toggle Mod Gelap */}
+            {onToggleDarkMode && (
+              <button
+                onClick={onToggleDarkMode}
+                title={isDarkMode ? "Tukar ke Mod Cerah (Siang)" : "Tukar ke Mod Gelap (Malam)"}
+                aria-label="Tukar mod gelap atau cerah"
+                className="neu-btn w-9 h-9 rounded-xl flex items-center justify-center text-teal-800 hover:text-amber-600 transition"
+              >
+                <i className={isDarkMode ? "fa-solid fa-sun text-amber-400 text-sm" : "fa-solid fa-moon text-teal-700 text-sm"}></i>
+              </button>
+            )}
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile Actions */}
           <div className="md:hidden flex items-center gap-2">
+            {onToggleDarkMode && (
+              <button
+                onClick={onToggleDarkMode}
+                title={isDarkMode ? "Mod Cerah" : "Mod Gelap"}
+                aria-label="Tukar mod gelap atau cerah"
+                className="neu-btn w-8 h-8 rounded-xl flex items-center justify-center text-teal-800"
+              >
+                <i className={isDarkMode ? "fa-solid fa-sun text-amber-400 text-xs" : "fa-solid fa-moon text-teal-700 text-xs"}></i>
+              </button>
+            )}
+
             <button
               onClick={onNavigateToHadis40}
               className="neu-btn-primary px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5"

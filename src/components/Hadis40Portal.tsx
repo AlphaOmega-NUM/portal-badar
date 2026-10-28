@@ -6,6 +6,8 @@ interface Hadis40PortalProps {
   onNavigateHome: () => void;
   initialHadisNo?: number | null;
   onSelectHadis?: (no: number | null) => void;
+  isDarkMode?: boolean;
+  onToggleDarkMode?: () => void;
 }
 
 const keistimewaanList = [
@@ -38,7 +40,9 @@ const keistimewaanList = [
 export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
   onNavigateHome,
   initialHadisNo = null,
-  onSelectHadis
+  onSelectHadis,
+  isDarkMode = false,
+  onToggleDarkMode
 }) => {
   const [selectedHadisNo, setSelectedHadisNo] = useState<number | null>(initialHadisNo);
   const [searchQuery, setSearchQuery] = useState('');
@@ -121,14 +125,26 @@ export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
             </div>
           </div>
 
-          {/* Butang Kembali ke Halaman Utama */}
-          <div className="flex items-center gap-3">
+          {/* Butang Kembali & Toggle Mod Gelap */}
+          <div className="flex items-center gap-2.5">
+            {onToggleDarkMode && (
+              <button
+                onClick={onToggleDarkMode}
+                title={isDarkMode ? "Tukar ke Mod Cerah (Siang)" : "Tukar ke Mod Gelap (Malam)"}
+                aria-label="Tukar mod gelap atau cerah"
+                className="neu-btn w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-teal-800 hover:text-amber-600 transition"
+              >
+                <i className={isDarkMode ? "fa-solid fa-sun text-amber-400 text-sm" : "fa-solid fa-moon text-teal-700 text-sm"}></i>
+              </button>
+            )}
+
             <button
               onClick={onNavigateHome}
-              className="neu-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-teal-950 flex items-center gap-2 hover:text-amber-800 transition"
+              className="neu-btn px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-teal-950 flex items-center gap-2 hover:text-amber-800 transition"
             >
               <i className="fa-solid fa-house text-teal-700 text-xs sm:text-sm"></i>
-              <span>Kembali ke Halaman Utama</span>
+              <span className="hidden sm:inline">Kembali ke Halaman Utama</span>
+              <span className="inline sm:hidden">Utama</span>
             </button>
           </div>
         </nav>
@@ -496,6 +512,16 @@ export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
                   <i className="fa-solid fa-arrow-left"></i> Kembali ke Kad Hadis 40
                 </button>
                 <div className="flex items-center gap-2">
+                  {onToggleDarkMode && (
+                    <button
+                      onClick={onToggleDarkMode}
+                      title={isDarkMode ? "Tukar ke Mod Cerah (Siang)" : "Tukar ke Mod Gelap (Malam)"}
+                      aria-label="Tukar mod gelap atau cerah"
+                      className="neu-raised-sm w-8 h-8 rounded-xl flex items-center justify-center text-teal-800 hover:text-amber-600 transition"
+                    >
+                      <i className={isDarkMode ? "fa-solid fa-sun text-amber-400 text-xs" : "fa-solid fa-moon text-teal-700 text-xs"}></i>
+                    </button>
+                  )}
                   <button
                     onClick={salinTeksHadis}
                     title="Salin maklumat hadis"

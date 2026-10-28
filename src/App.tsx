@@ -13,6 +13,30 @@ export default function App() {
   const [activeHadisNo, setActiveHadisNo] = useState<number | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Tema Mod Gelap (Dark Mode)
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('badar_theme');
+      if (saved) return saved === 'dark';
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('badar_theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('badar_theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(prev => !prev);
+  };
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 90,
@@ -94,7 +118,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen text-[#27372d] selection:bg-teal-200 selection:text-teal-900 relative">
+    <div className="min-h-screen text-[#27372d] dark:text-[#d8e5dd] selection:bg-teal-200 selection:text-teal-900 dark:selection:bg-teal-900 dark:selection:text-teal-100 relative transition-colors duration-300">
       {/* Scroll Progress Bar with Spring Momentum Delay */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-700 via-teal-500 to-amber-500 origin-left z-50 shadow-[0_2px_8px_rgba(15,118,110,0.35)]"
@@ -102,12 +126,18 @@ export default function App() {
       />
 
       {currentPage === 'portal' ? (
-        <BadarPortal onNavigateToHadis40={() => navigateToHadis40()} />
+        <BadarPortal
+          onNavigateToHadis40={() => navigateToHadis40()}
+          isDarkMode={isDarkMode}
+          onToggleDarkMode={toggleDarkMode}
+        />
       ) : (
         <Hadis40Portal
           onNavigateHome={() => navigateToHome('utama')}
           initialHadisNo={activeHadisNo}
           onSelectHadis={(no) => setActiveHadisNo(no)}
+          isDarkMode={isDarkMode}
+          onToggleDarkMode={toggleDarkMode}
         />
       )}
 
@@ -121,7 +151,7 @@ export default function App() {
           onClick={scrollToTop}
           title="Kembali ke atas"
           aria-label="Kembali ke atas halaman"
-          className="fixed bottom-6 right-6 z-40 neu-btn w-12 h-12 rounded-2xl flex items-center justify-center text-teal-800 hover:text-amber-700 shadow-lg border border-white/40"
+          className="fixed bottom-6 right-6 z-40 neu-btn w-12 h-12 rounded-2xl flex items-center justify-center text-teal-800 dark:text-amber-300 hover:text-amber-700 shadow-lg border border-white/40"
         >
           <i className="fa-solid fa-arrow-up text-base"></i>
         </motion.button>

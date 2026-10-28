@@ -7,11 +7,25 @@
   --teal-brand: #0f766e;
 }
 
+html.dark {
+  --bg-base: #101915;
+  --shadow-light: #182620;
+  --shadow-dark: #080d0b;
+  --teal-brand: #2dd4bf;
+  color-scheme: dark;
+}
+
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--bg-base);
   color: #27372d;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: var(--bg-base);
+  color: #d8e5dd;
 }
 
 .font-arabic {
@@ -25,14 +39,34 @@ body {
               -8px -8px 18px var(--shadow-light);
 }
 
+html.dark .neu-raised {
+  background: var(--bg-base);
+  box-shadow: 7px 7px 18px var(--shadow-dark), 
+              -7px -7px 18px var(--shadow-light);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 .neu-raised-sm {
   background: var(--bg-base);
   box-shadow: 4px 4px 10px var(--shadow-dark), 
               -4px -4px 10px var(--shadow-light);
 }
 
+html.dark .neu-raised-sm {
+  background: var(--bg-base);
+  box-shadow: 3px 3px 9px var(--shadow-dark), 
+              -3px -3px 9px var(--shadow-light);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 /* Tenggelam / Inset */
 .neu-inset {
+  background: var(--bg-base);
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+              inset -4px -4px 8px var(--shadow-light);
+}
+
+html.dark .neu-inset {
   background: var(--bg-base);
   box-shadow: inset 4px 4px 8px var(--shadow-dark), 
               inset -4px -4px 8px var(--shadow-light);
@@ -47,16 +81,36 @@ body {
   cursor: pointer;
 }
 
+html.dark .neu-btn {
+  background: var(--bg-base);
+  box-shadow: 4px 4px 11px var(--shadow-dark), 
+              -4px -4px 11px var(--shadow-light);
+  color: #d1ded6;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 .neu-btn:hover {
   box-shadow: 2px 2px 6px var(--shadow-dark), 
               -2px -2px 6px var(--shadow-light);
   transform: translateY(1px);
 }
 
+html.dark .neu-btn:hover {
+  box-shadow: 2px 2px 6px var(--shadow-dark), 
+              -2px -2px 6px var(--shadow-light);
+  color: #2dd4bf;
+}
+
 .neu-btn:active, .neu-btn.active {
   box-shadow: inset 3px 3px 6px var(--shadow-dark), 
               inset -3px -3px 6px var(--shadow-light);
   color: #0f766e;
+}
+
+html.dark .neu-btn:active, html.dark .neu-btn.active {
+  box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+              inset -3px -3px 6px var(--shadow-light);
+  color: #2dd4bf;
 }
 
 /* Butang Utama Hijau Beraksen */
@@ -67,6 +121,13 @@ body {
   color: white;
   transition: all 0.2s ease;
   cursor: pointer;
+}
+
+html.dark .neu-btn-primary {
+  background: linear-gradient(145deg, #0e7068, #07453f);
+  box-shadow: 5px 5px 14px var(--shadow-dark), 
+              -5px -5px 14px var(--shadow-light);
+  color: #f0fdf9;
 }
 
 .neu-btn-primary:hover {
@@ -81,3 +142,66 @@ body {
   transform: translateY(1px);
 }
 
+html.dark .neu-btn-primary:active {
+  box-shadow: inset 3px 3px 6px #042724, 
+              inset -3px -3px 6px #148076;
+}
+
+/* Dark mode typography and accent overrides */
+html.dark .text-teal-950 {
+  color: #eafaf1;
+}
+
+html.dark .text-teal-900 {
+  color: #d1f3e0;
+}
+
+html.dark .text-teal-800 {
+  color: #2dd4bf;
+}
+
+html.dark .text-teal-700 {
+  color: #5eead4;
+}
+
+html.dark .text-teal-600 {
+  color: #2dd4bf;
+}
+
+html.dark .text-slate-700 {
+  color: #c7d8ce;
+}
+
+html.dark .text-slate-600 {
+  color: #9cb3a5;
+}
+
+html.dark .text-slate-500 {
+  color: #7b9687;
+}
+
+html.dark .text-slate-400 {
+  color: #657f71;
+}
+
+html.dark .text-amber-800 {
+  color: #fcd34d;
+}
+
+html.dark .text-amber-900 {
+  color: #fde68a;
+}
+
+html.dark .text-amber-700 {
+  color: #fbbf24;
+}
+
+html.dark .border-slate-300\/40 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .border-white\/40,
+html.dark .border-white\/50,
+html.dark .border-white\/30 {
+  border-color: rgba(255, 255, 255, 0.08);
+}
