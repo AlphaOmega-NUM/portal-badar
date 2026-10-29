@@ -91,7 +91,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                   <span className="text-2xl">🇲🇾</span>
                   <div>
                     <h4 className="font-bold text-xs sm:text-sm text-teal-950">Bahasa Melayu</h4>
-                    <p className="text-[10px] text-slate-500">Bahasa Rasmi</p>
                   </div>
                   {language === 'ms' && (
                     <i className="fa-solid fa-circle-check text-teal-700 ml-auto text-sm"></i>

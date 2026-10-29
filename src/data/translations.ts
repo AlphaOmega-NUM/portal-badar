@@ -222,12 +222,12 @@ export const translations: Record<Language, TranslationDictionary> = {
     bannerDesc: "Kami menyediakan halaman interaktif khas yang menghimpunkan kesemua 40 Hadis Al-Imam An-Nawawi lengkap dengan teks Arab, maksud, huraian mendalam, pengajaran berpandukan Modul Edisi Kedua KPM, serta carian pintar.",
     bannerBtn: "Buka Sudut Hadis 40 Sekarang",
 
-    footerSchoolTitle: "BADAR SMA Nurul Ittifaq",
+    footerSchoolTitle: "BADAR SMKA Nurul Ittifaq",
     footerSchoolDesc: "Badan Dakwah dan Rohani komited menyuburkan akhlak dan penghayatan Islam dalam kalangan warga institusi.",
     footerLinksTitle: "Pautan Pantas",
     footerLocationTitle: "Lokasi & Operasi",
     footerLocation: "Musolla Utama / Bilik Gerakan BADAR",
-    footerCopyright: "© 2026 Badan Dakwah dan Rohani (BADAR) Sekolah Menengah Agama Nurul Ittifaq. Membina Sahsiah Rabbani.",
+    footerCopyright: "©2026 BADAR Sekolah Menengah Kebangsaan Agama Nurul Ittifaq. Membina Sahsiah Rabbani",
     footerDevCredit: "Dibangun dan Dibina Oleh Khir Al Hakim",
 
     hadisPortalTitle: "SUDUT HADIS 40",
@@ -433,12 +433,12 @@ export const translations: Record<Language, TranslationDictionary> = {
     bannerDesc: "We provide an interactive portal compiling all 40 Hadiths of Al-Imam An-Nawawi complete with full Arabic calligraphy, translation, deep commentary, MoE 2nd Edition takeaways, and smart search.",
     bannerBtn: "Open 40 Hadiths Corner Now",
 
-    footerSchoolTitle: "BADAR SMA Nurul Ittifaq",
+    footerSchoolTitle: "BADAR SMKA Nurul Ittifaq",
     footerSchoolDesc: "Badan Dakwah dan Rohani is committed to instilling upright morals and spiritual values across the school community.",
     footerLinksTitle: "Quick Links",
     footerLocationTitle: "Location & Operations",
     footerLocation: "Main Musolla / BADAR Operation Room",
-    footerCopyright: "© 2026 Badan Dakwah dan Rohani (BADAR) Sekolah Menengah Agama Nurul Ittifaq. Membina Sahsiah Rabbani.",
+    footerCopyright: "©2026 BADAR Sekolah Menengah Kebangsaan Agama Nurul Ittifaq. Membina Sahsiah Rabbani",
     footerDevCredit: "Developed and Built by Khir Al Hakim",
 
     hadisPortalTitle: "40 HADITHS CORNER",
