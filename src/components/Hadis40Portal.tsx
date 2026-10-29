@@ -63,7 +63,7 @@ export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
   const navigasiHadis = (arah: number) => {
     if (!selectedHadisNo) return;
     const sasaran = selectedHadisNo + arah;
-    if (sasaran >= 1 && sasaran <= 40) {
+    if (sasaran >= 1 && sasaran <= pangkalanHadis.length) {
       bukaHalamanHadis(sasaran);
     }
   };
@@ -710,10 +710,10 @@ export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
                   {t.allCardsBtn}
                 </button>
                 <button
-                  disabled={currentHadis.no >= 40}
+                  disabled={currentHadis.no >= pangkalanHadis.length}
                   onClick={() => navigasiHadis(1)}
                   className={`neu-btn px-4 py-2 rounded-xl text-xs font-bold text-teal-900 flex items-center gap-2 ${
-                    currentHadis.no >= 40 ? 'opacity-40 cursor-not-allowed' : ''
+                    currentHadis.no >= pangkalanHadis.length ? 'opacity-40 cursor-not-allowed' : ''
                   }`}
                 >
                   {t.nextHadisBtn} <i className="fa-solid fa-chevron-right"></i>

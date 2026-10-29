@@ -15,9 +15,9 @@ test('translations dictionaries have all keys matching', () => {
   assert.deepStrictEqual(msKeys, enKeys, 'Both ms and en must have identical keys');
 });
 
-test('hadisEnglishData contains English translations for 40 hadiths', () => {
-  assert.strictEqual(Object.keys(hadisEnglishData).length, 40, 'Must have 40 hadiths translated in English');
-  for (let i = 1; i <= 40; i++) {
+test('hadisEnglishData contains English translations for 42 hadiths', () => {
+  assert.strictEqual(Object.keys(hadisEnglishData).length, 42, 'Must have 42 hadiths translated in English');
+  for (let i = 1; i <= 42; i++) {
     const item = hadisEnglishData[i];
     assert.ok(item, `Hadis #${i} must have English translation`);
     assert.ok(item.tajukEn.length > 0, `Hadis #${i} must have English title`);

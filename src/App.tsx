@@ -92,7 +92,7 @@ export default function App() {
       const hash = window.location.hash;
       if (hash.startsWith('#hadis-')) {
         const num = parseInt(hash.replace('#hadis-', ''), 10);
-        if (!isNaN(num) && num >= 1 && num <= 40) {
+        if (!isNaN(num) && num >= 1 && num <= 42) {
           setCurrentPage('hadis40');
           setActiveHadisNo(num);
           return;

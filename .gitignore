@@ -6,3 +6,9 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Temporary extraction and large files
+pdf_pages/
+.playwright-cli/
+*.pdf
+public/assets/aistudio/*.pdf
