@@ -767,15 +767,5 @@ export const hadisEnglishData: Record<number, { tajukEn: string; rawiEn: string;
     tajukEn: "Living in this World as a Stranger or Traveler",
     rawiEn: "Abdullah bin Umar r.a.",
     maksudEn: "Be in this world as though you were a stranger or a wayfarer on a path. When evening comes, do not anticipate the morning; and when morning comes, do not anticipate the evening. Take from your health for your illness, and from your life for your death."
-  },
-  41: {
-    tajukEn: "Subordinating Desires to Prophetic Guidance",
-    rawiEn: "Abdullah bin 'Amr bin al-'As r.a.",
-    maksudEn: "None of you truly believes until his desires are subservient to what I have brought."
-  },
-  42: {
-    tajukEn: "The Vastness of Allah's Forgiveness and Mercy",
-    rawiEn: "Anas bin Malik r.a.",
-    maksudEn: "Allah Almighty says: 'O son of Adam, as long as you call upon Me and put your hope in Me, I shall forgive you for what you have done, and I shall not mind. O son of Adam, were your sins to reach the clouds of the sky and then you asked forgiveness of Me, I would forgive you. O son of Adam, were you to come to Me with sins nearly as great as the earth and then meet Me associating nothing with Me, I would bring you forgiveness nearly as great as it.'"
   }
 };

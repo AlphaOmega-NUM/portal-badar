@@ -161,37 +161,5 @@ export const hadisPart4: HadisItem[] = [
     ],
     nilai: "Ihsan, Keyakinan",
     aktiviti: "Halaqah ilmu pengurusan masa, Usrah mingguan, Muhasabah harian (audit diri 'hari ini lebih baik dari semalam')"
-  },
-  {
-    no: 41,
-    tajuk: "Keutamaan Sunah Nabi SAW",
-    rawi: "Saiyidina Abu Muhammad Abdullah bin 'Amr bin al-'As r.a.",
-    matanArab: "عَنْ أَبِي مُحَمَّدٍ عَبْدِ اللَّهِ بْنِ عَمْرِو بْنِ الْعَاصِ رَضِيَ اللَّهُ عَنْهُمَا قَالَ: قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ: لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يَكُونَ هَوَاهُ تَبَعًا لِمَا جِئْتُ بِهِ.\nحَدِيثٌ صَحِيحٌ، رُوِّينَاهُ فِي كِتَابِ الْحُجَّةِ بِإِسْنَادٍ صَحِيحٍ.",
-    maksud: "Daripada Saiyidina Abu Muhammad Abdullah bin 'Amr bin al-'As r.a. beliau berkata, Rasulullah SAW bersabda: \"Tidak sempurna iman seseorang kamu sehinggalah keinginan dirinya (hawa nafsunya) mengikuti apa-apa (ajaran) yang aku bawa.\"\n(Hadis sahih. Diriwayatkan dalam kitab al-Hujjah dengan sanad yang sahih)",
-    huraian: "Hadis ini menjelaskan antara tuntutan iman yang hakiki ialah menundukkan hawa nafsu selaras dengan ajaran Rasulullah SAW. Mengutamakan syariat Islam mengatasi kehendak hawa nafsu dan keseronokan peribadi. Melawan hawa nafsu dikira sebagai mujahadah yang hanya mampu dilalui oleh orang yang ikhlas mencintai Allah SWT dan Rasul-Nya.",
-    pengajaran: [
-      "Menjadi kewajipan setiap orang Islam untuk mengikuti segala ajaran Rasulullah SAW.",
-      "Keimanan seseorang tidak sempurna sehingga kehendak nafsunya selaras dengan petunjuk syariat.",
-      "Sentiasa menjaga diri daripada kehendak syahwat terutamanya remaja zaman ini yang terdedah kepada pengaruh media sosial tanpa kawalan.",
-      "Mencintai Allah SWT dan Rasul-Nya dibuktikan dengan ketaatan melaksanakan sunnah baginda."
-    ],
-    nilai: "Kesejahteraan, Kemampanan, Ihsan",
-    aktiviti: "Bacaan hadis sunnah harian, Tazkirah ringkas di surau sekolah, Majlis penghargaan murid bersahsiah terpuji"
-  },
-  {
-    no: 42,
-    tajuk: "Mengharapkan Pengampunan dan Rahmat Allah SWT",
-    rawi: "Saiyidina Anas r.a.",
-    matanArab: "عَنْ أَنَسٍ رَضِيَ اللَّهُ عَنْهُ قَالَ: سَمِعْتُ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ يَقُولُ: قَالَ اللَّهُ تَعَالَى: يَا ابْنَ آدَمَ، إِنَّكَ مَا دَعَوْتَنِي وَرَجَوْتَنِي غَفَرْتُ لَكَ عَلَى مَا كَانَ مِنْكَ وَلَا أُبَالِي. يَا ابْنَ آدَمَ، لَوْ بَلَغَتْ ذُنُوبُكَ عَنَانَ السَّمَاءِ ثُمَّ اسْتَغْفَرْتَنِي غَفَرْتُ لَكَ. يَا ابْنَ آدَمَ، إِنَّكَ لَوْ أَتَيْتَنِي بِقُرَابِ الْأَرْضِ خَطَايَا ثُمَّ لَقِيتَنِي لَا تُشْرِكُ بِي شَيْئًا لَأَتَيْتُكَ بِقُرَابِهَا مَغْفِرَةً.\nرَوَاهُ التِّرْمِذِيُّ وَقَالَ: حَدِيثٌ حَسَنٌ.",
-    maksud: "Daripada Saiyidina Anas r.a. beliau berkata, aku mendengar Rasulullah SAW bersabda: \"Allah Taala berfirman: Wahai anak Adam, sesungguhnya selagi engkau berdoa dan berharap kepada-Ku, pasti Aku mengampunkan dosa-dosa yang ada padamu dan Aku tidak peduli (betapa banyaknya). Wahai anak Adam, sekiranya dosa engkau mencecah awan di langit kemudian engkau memohon ampun kepada-Ku, pasti Aku mengampunkan dosamu. Wahai anak Adam, sekiranya engkau datang kepada-Ku dengan dosa sepenuh isi bumi, kemudian engkau menemui-Ku dalam keadaan tidak mensyirikkan Aku dengan sesuatu pun, nescaya Aku akan mendatangkan kepadamu keampunan sepenuh bumi itu juga.\"\n(Hadis riwayat Imam al-Tirmizi. Hadis hasan)",
-    huraian: "Hadis ini menggambarkan kerahmatan dan keampunan Allah SWT yang tiada bertepi kepada hamba-Nya. Imam al-Nawawi meletakkan hadis ini di penamat kitab Hadis 40 sebagai simbolik harapan agar kita semua diampuni dosa sepanjang hayat. Selagi seseorang tidak mensyirikkan Allah dan sentiasa bertaubat dengan tulus, pintu keampunan Allah SWT sentiasa terbuka luas melangkaui luasnya langit dan bumi.",
-    pengajaran: [
-      "Rahmat dan pengampunan Allah SWT tiada batasnya; menjadi kewajipan kita untuk terus bertaubat dan memohon keampunan-Nya.",
-      "Allah SWT pasti akan mengampunkan dosa hamba-Nya yang bertaubat walau sebesar mana dosa dilakukan dengan syarat tidak mensyirikkan-Nya.",
-      "Sentiasa memelihara akidah tauhid dan menjauhi syirik yang membatalkan keampunan.",
-      "Berdoa dan berharap hanya kepada Allah SWT serta tidak berputus asa daripada rahmat-Nya."
-    ],
-    nilai: "Keyakinan, Kesejahteraan, Ihsan",
-    aktiviti: "Bacaan hadis taubat dan istighfar, Tazkirah keindahan taubat, Menghafal Sayyidul Istighfar bersama murid"
   }
 ];
