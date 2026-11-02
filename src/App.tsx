@@ -4,14 +4,22 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useSpring } from 'motion/react';
+import { motion, useScroll } from 'motion/react';
 import { BadarPortal } from './components/BadarPortal';
 import { Hadis40Portal } from './components/Hadis40Portal';
+import { HadisQuizPortal } from './components/HadisQuizPortal';
 import { SettingsModal, ArabicFontSize } from './components/SettingsModal';
 import { Language } from './data/translations';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'portal' | 'hadis40'>('portal');
+  const [currentPage, setCurrentPage] = useState<'portal' | 'hadis40' | 'quiz'>(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash;
+      if (hash === '#kuiz' || hash === '#kuiz-hadis40') return 'quiz';
+      if (hash.startsWith('#hadis-') || hash === '#hadis40' || hash === '#biografi-nawawi' || hash === '#kad-hadis-section') return 'hadis40';
+    }
+    return 'portal';
+  });
   const [activeHadisNo, setActiveHadisNo] = useState<number | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -73,15 +81,22 @@ export default function App() {
   };
 
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 90,
-    damping: 25,
-    restDelta: 0.001
-  });
 
   useEffect(() => {
+    let ticking = false;
+    let lastState = false;
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 320);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const shouldShow = window.scrollY > 320;
+          if (shouldShow !== lastState) {
+            lastState = shouldShow;
+            setShowScrollTop(shouldShow);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -99,6 +114,12 @@ export default function App() {
         }
       }
       
+      if (hash === '#kuiz' || hash === '#kuiz-hadis40') {
+        setCurrentPage('quiz');
+        setActiveHadisNo(null);
+        return;
+      }
+
       if (hash === '#hadis40' || hash === '#biografi-nawawi' || hash === '#kad-hadis-section') {
         setCurrentPage('hadis40');
         setActiveHadisNo(null);
@@ -134,6 +155,13 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navigateToQuiz = () => {
+    setCurrentPage('quiz');
+    setActiveHadisNo(null);
+    window.location.hash = 'kuiz';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const navigateToHome = (sectionId?: string) => {
     setCurrentPage('portal');
     setActiveHadisNo(null);
@@ -154,23 +182,27 @@ export default function App() {
 
   return (
     <div className="min-h-screen text-[#27372d] dark:text-[#d8e5dd] selection:bg-teal-200 selection:text-teal-900 dark:selection:bg-teal-900 dark:selection:text-teal-100 relative transition-colors duration-300">
-      {/* Scroll Progress Bar with Spring Momentum Delay */}
+      {/* Scroll Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-700 via-teal-500 to-amber-500 origin-left z-50 shadow-[0_2px_8px_rgba(15,118,110,0.35)]"
-        style={{ scaleX }}
+        style={{ scaleX: scrollYProgress }}
       />
 
-      {currentPage === 'portal' ? (
+      {currentPage === 'portal' && (
         <BadarPortal
           onNavigateToHadis40={() => navigateToHadis40()}
+          onNavigateToQuiz={navigateToQuiz}
           isDarkMode={isDarkMode}
           onToggleDarkMode={toggleDarkMode}
           language={language}
           onOpenSettings={() => setIsSettingsOpen(true)}
         />
-      ) : (
+      )}
+
+      {currentPage === 'hadis40' && (
         <Hadis40Portal
           onNavigateHome={() => navigateToHome('utama')}
+          onNavigateToQuiz={navigateToQuiz}
           initialHadisNo={activeHadisNo}
           onSelectHadis={(no) => setActiveHadisNo(no)}
           isDarkMode={isDarkMode}
@@ -178,6 +210,17 @@ export default function App() {
           language={language}
           onOpenSettings={() => setIsSettingsOpen(true)}
           arabicFontSize={arabicFontSize}
+        />
+      )}
+
+      {currentPage === 'quiz' && (
+        <HadisQuizPortal
+          onNavigateHome={() => navigateToHome('utama')}
+          onNavigateToHadis40={() => navigateToHadis40()}
+          isDarkMode={isDarkMode}
+          onToggleDarkMode={toggleDarkMode}
+          language={language}
+          onOpenSettings={() => setIsSettingsOpen(true)}
         />
       )}
 

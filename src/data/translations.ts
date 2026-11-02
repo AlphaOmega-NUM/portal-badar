@@ -139,6 +139,38 @@ export interface TranslationDictionary {
   fontSizeMedium: string;
   fontSizeLarge: string;
   closeBtn: string;
+
+  // Quiz Translations
+  navQuiz: string;
+  quizTitle: string;
+  quizSubtitle: string;
+  quizTotalScore: string;
+  quizCompletedLevels: string;
+  quizRuleTitle: string;
+  quizRuleQuestions: string;
+  quizRulePoints: string;
+  quizRuleBonus: string;
+  quizRulePass: string;
+  quizSelectLevel: string;
+  quizLevelLabel: (lvl: number) => string;
+  quizQuestionProgress: (current: number, total: number) => string;
+  quizTimeRemaining: string;
+  quizFastBonusActive: string;
+  quizFastBonusAwarded: string;
+  quizCorrectAwarded: string;
+  quizIncorrectMsg: string;
+  quizNextQuestion: string;
+  quizFinishBtn: string;
+  quizExplanationTitle: string;
+  quizResultCongratTitle: string;
+  quizResultFailTitle: string;
+  quizResultScore: string;
+  quizResultPassedMsg: string;
+  quizResultTryAgainMsg: string;
+  quizBtnRetry: string;
+  quizBtnNextLevel: string;
+  quizBtnSelectLevel: string;
+  quizBtnBackToHadis: string;
 }
 
 export const translations: Record<Language, TranslationDictionary> = {
@@ -351,7 +383,39 @@ export const translations: Record<Language, TranslationDictionary> = {
     fontSizeNormal: "Biasa",
     fontSizeMedium: "Sederhana",
     fontSizeLarge: "Besar",
-    closeBtn: "Simpan & Tutup"
+    closeBtn: "Simpan & Tutup",
+
+    // Quiz Translations
+    navQuiz: "Kuiz Hadis 40",
+    quizTitle: "Kuiz Hadis 40 Imam An-Nawawi",
+    quizSubtitle: "Uji kefahaman & hafazan anda merentasi 10 tahap cabaran interaktif",
+    quizTotalScore: "Mata Keseluruhan",
+    quizCompletedLevels: "Tahap Selesai",
+    quizRuleTitle: "Sistem & Peraturan Kuiz",
+    quizRuleQuestions: "5 soalan objektif rawak bagi setiap tahap pilihan A, B, C, D.",
+    quizRulePoints: "2 mata asas bagi setiap jawapan yang betul.",
+    quizRuleBonus: "Bonus Pantas 2X Ganda (4 Mata) jika dijawab pantas dalam tempoh 8 saat pertama!",
+    quizRulePass: "Lulus sekurang-kurangnya 6 mata untuk membuka tahap seterusnya.",
+    quizSelectLevel: "Pilih Tahap Cabaran",
+    quizLevelLabel: (lvl: number) => `Tahap ${lvl}`,
+    quizQuestionProgress: (current: number, total: number) => `Soalan ${current} daripada ${total}`,
+    quizTimeRemaining: "Masa Tinggal",
+    quizFastBonusActive: "⚡ BONUS PANTAS 2X AKTIF!",
+    quizFastBonusAwarded: "Tahniah! +4 Mata (Bonus Pantas 2X Ganda)",
+    quizCorrectAwarded: "Tepat! +2 Mata",
+    quizIncorrectMsg: "Kurang Tepat. Jawapan yang betul ialah:",
+    quizNextQuestion: "Soalan Seterusnya",
+    quizFinishBtn: "Lihat Keputusan",
+    quizExplanationTitle: "Huraian & Rujukan Hadis",
+    quizResultCongratTitle: "Tahniah, Anda Berjaya!",
+    quizResultFailTitle: "Teruskan Usaha!",
+    quizResultScore: "Mata Diperoleh",
+    quizResultPassedMsg: "Cemerlang! Anda telah memenuhi syarat lulus dan membuka tahap seterusnya.",
+    quizResultTryAgainMsg: "Anda memerlukan sekurang-kurangnya 6 mata untuk lulus tahap ini. Jangan putus asa, cuba lagi!",
+    quizBtnRetry: "Main Semula Tahap Ini",
+    quizBtnNextLevel: "Teruskan ke Tahap Seterusnya",
+    quizBtnSelectLevel: "Pilih Tahap Lain",
+    quizBtnBackToHadis: "Kembali ke Sudut Hadis"
   },
   en: {
     badarTitle: "BADAR",
@@ -562,7 +626,39 @@ export const translations: Record<Language, TranslationDictionary> = {
     fontSizeNormal: "Normal",
     fontSizeMedium: "Medium",
     fontSizeLarge: "Large",
-    closeBtn: "Save & Close"
+    closeBtn: "Save & Close",
+
+    // Quiz Translations
+    navQuiz: "40 Hadiths Quiz",
+    quizTitle: "40 Hadiths of Imam An-Nawawi Quiz",
+    quizSubtitle: "Test your comprehension and memorization across 10 progressive challenge levels",
+    quizTotalScore: "Total Score",
+    quizCompletedLevels: "Levels Completed",
+    quizRuleTitle: "Quiz Rules & Scoring System",
+    quizRuleQuestions: "5 randomized multiple-choice questions (A, B, C, D) per level.",
+    quizRulePoints: "2 base points awarded for each correct answer.",
+    quizRuleBonus: "Speed Bonus 2X Multiplier (4 Points) when answered swiftly within the first 8 seconds!",
+    quizRulePass: "Score at least 6 points to unlock the subsequent level.",
+    quizSelectLevel: "Select Challenge Level",
+    quizLevelLabel: (lvl: number) => `Level ${lvl}`,
+    quizQuestionProgress: (current: number, total: number) => `Question ${current} of ${total}`,
+    quizTimeRemaining: "Time Left",
+    quizFastBonusActive: "⚡ 2X SPEED BONUS ACTIVE!",
+    quizFastBonusAwarded: "Splendid! +4 Points (2X Speed Bonus)",
+    quizCorrectAwarded: "Correct! +2 Points",
+    quizIncorrectMsg: "Incorrect. The correct answer is:",
+    quizNextQuestion: "Next Question",
+    quizFinishBtn: "View Results",
+    quizExplanationTitle: "Hadith Reference & Commentary",
+    quizResultCongratTitle: "Congratulations, Level Cleared!",
+    quizResultFailTitle: "Keep Striving!",
+    quizResultScore: "Score Earned",
+    quizResultPassedMsg: "Excellent! You satisfied the passing criteria and unlocked the next level.",
+    quizResultTryAgainMsg: "You need at least 6 points to pass this level. Don't give up, try again!",
+    quizBtnRetry: "Replay This Level",
+    quizBtnNextLevel: "Proceed to Next Level",
+    quizBtnSelectLevel: "Choose Another Level",
+    quizBtnBackToHadis: "Back to Hadith Corner"
   }
 };
 

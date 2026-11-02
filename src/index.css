@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --bg-base: #e6eee8;
   --shadow-light: #ffffff;
@@ -46,6 +48,21 @@ html.dark .neu-raised {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+/* Kad Neumorphic - Seragam & Kemas */
+.neu-card {
+  background: var(--bg-base);
+  box-shadow: 6px 6px 15px var(--shadow-dark), 
+              -6px -6px 15px var(--shadow-light);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+html.dark .neu-card {
+  background: var(--bg-base);
+  box-shadow: 6px 6px 15px var(--shadow-dark), 
+              -6px -6px 15px var(--shadow-light);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 .neu-raised-sm {
   background: var(--bg-base);
   box-shadow: 4px 4px 10px var(--shadow-dark), 
@@ -72,13 +89,15 @@ html.dark .neu-inset {
               inset -4px -4px 8px var(--shadow-light);
 }
 
-/* Butang Neumorphic Biasa */
+/* Butang Neumorphic - Dioptimumkan untuk kelancaran (60fps GPU) */
 .neu-btn {
   background: var(--bg-base);
   box-shadow: 5px 5px 12px var(--shadow-dark), 
               -5px -5px 12px var(--shadow-light);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, color 0.12s ease-out;
   cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 html.dark .neu-btn {
@@ -92,7 +111,7 @@ html.dark .neu-btn {
 .neu-btn:hover {
   box-shadow: 2px 2px 6px var(--shadow-dark), 
               -2px -2px 6px var(--shadow-light);
-  transform: translateY(1px);
+  transform: translateY(-1px) translateZ(0);
 }
 
 html.dark .neu-btn:hover {
@@ -105,6 +124,7 @@ html.dark .neu-btn:hover {
   box-shadow: inset 3px 3px 6px var(--shadow-dark), 
               inset -3px -3px 6px var(--shadow-light);
   color: #0f766e;
+  transform: translateY(1px) translateZ(0);
 }
 
 html.dark .neu-btn:active, html.dark .neu-btn.active {
@@ -119,8 +139,10 @@ html.dark .neu-btn:active, html.dark .neu-btn.active {
   box-shadow: 6px 6px 15px var(--shadow-dark), 
               -6px -6px 15px var(--shadow-light);
   color: white;
-  transition: all 0.2s ease;
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
   cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 html.dark .neu-btn-primary {
@@ -131,7 +153,7 @@ html.dark .neu-btn-primary {
 }
 
 .neu-btn-primary:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1px) translateZ(0);
   box-shadow: 4px 4px 10px var(--shadow-dark), 
               -4px -4px 10px var(--shadow-light);
 }
@@ -139,7 +161,7 @@ html.dark .neu-btn-primary {
 .neu-btn-primary:active {
   box-shadow: inset 3px 3px 6px #08433e, 
               inset -3px -3px 6px #16a398;
-  transform: translateY(1px);
+  transform: translateY(1px) translateZ(0);
 }
 
 html.dark .neu-btn-primary:active {
@@ -168,20 +190,29 @@ html.dark .text-teal-600 {
   color: #2dd4bf;
 }
 
+html.dark .text-slate-950,
+html.dark .text-slate-900 {
+  color: #f8fafc;
+}
+
+html.dark .text-slate-800 {
+  color: #f1f5f9;
+}
+
 html.dark .text-slate-700 {
-  color: #c7d8ce;
+  color: #cbd5e1;
 }
 
 html.dark .text-slate-600 {
-  color: #9cb3a5;
+  color: #94a3b8;
 }
 
 html.dark .text-slate-500 {
-  color: #7b9687;
+  color: #64748b;
 }
 
 html.dark .text-slate-400 {
-  color: #657f71;
+  color: #94a3b8;
 }
 
 html.dark .text-amber-800 {

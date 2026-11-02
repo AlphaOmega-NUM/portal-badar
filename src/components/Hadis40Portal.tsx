@@ -6,6 +6,7 @@ import { ArabicFontSize } from './SettingsModal';
 
 interface Hadis40PortalProps {
   onNavigateHome: () => void;
+  onNavigateToQuiz?: () => void;
   initialHadisNo?: number | null;
   onSelectHadis?: (no: number | null) => void;
   isDarkMode?: boolean;
@@ -17,6 +18,7 @@ interface Hadis40PortalProps {
 
 export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
   onNavigateHome,
+  onNavigateToQuiz,
   initialHadisNo = null,
   onSelectHadis,
   isDarkMode = false,
@@ -146,6 +148,18 @@ export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
               </button>
             )}
 
+            {/* Butang Khas Kuiz Hadis 40 */}
+            {onNavigateToQuiz && (
+              <button
+                onClick={onNavigateToQuiz}
+                className="neu-btn px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-teal-950 flex items-center gap-1.5 hover:text-amber-800 border border-amber-500/30 transition"
+                title={t.navQuiz}
+              >
+                <i className="fa-solid fa-gamepad text-amber-600 text-xs sm:text-sm"></i>
+                <span>{t.navQuiz}</span>
+              </button>
+            )}
+
             <button
               onClick={onNavigateHome}
               className="neu-btn px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-teal-950 flex items-center gap-2 hover:text-amber-800 transition"
@@ -264,6 +278,16 @@ export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
                     <i className="fa-solid fa-magnifying-glass text-base"></i>
                     <span>{t.hadisBtnSearch}</span>
                   </button>
+
+                  {onNavigateToQuiz && (
+                    <button
+                      onClick={onNavigateToQuiz}
+                      className="neu-btn px-6 py-3.5 rounded-2xl font-bold text-xs sm:text-sm text-teal-950 flex items-center gap-2.5 hover:text-amber-800 border border-amber-500/40 transition group"
+                    >
+                      <i className="fa-solid fa-gamepad text-amber-600 text-base group-hover:scale-110 transition-transform"></i>
+                      <span>{t.navQuiz}</span>
+                    </button>
+                  )}
                 </motion.div>
               </motion.section>
 
@@ -437,18 +461,10 @@ export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
                         const cardRawi = (language === 'en' && enData?.rawiEn) ? enData.rawiEn : h.rawi;
 
                         return (
-                          <motion.button
+                          <button
                             key={h.no}
-                            initial={{ opacity: 0, y: 25 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.1 }}
-                            transition={{
-                              duration: 0.5,
-                              delay: (index % 4) * 0.08,
-                              ease: [0.22, 1, 0.36, 1]
-                            }}
                             onClick={() => bukaHalamanHadis(h.no)}
-                            className="neu-btn p-4 rounded-2xl flex flex-col justify-between text-left group w-full border border-white/30"
+                            className="neu-btn p-4 rounded-2xl flex flex-col justify-between text-left group w-full border border-white/30 transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0.5"
                           >
                             <div className="flex items-center justify-between w-full mb-2">
                               <span className="neu-raised-sm px-2.5 py-1 rounded-xl text-xs font-black text-teal-800">
@@ -466,7 +482,7 @@ export const Hadis40Portal: React.FC<Hadis40PortalProps> = ({
                                 {cardRawi.split(' ')[0]} ...
                               </p>
                             </div>
-                          </motion.button>
+                          </button>
                         );
                       })}
                     </div>

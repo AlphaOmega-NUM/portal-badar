@@ -4,6 +4,7 @@ import { Language, translations } from '../data/translations';
 
 interface BadarPortalProps {
   onNavigateToHadis40: () => void;
+  onNavigateToQuiz?: () => void;
   isDarkMode?: boolean;
   onToggleDarkMode?: () => void;
   language?: Language;
@@ -12,6 +13,7 @@ interface BadarPortalProps {
 
 export const BadarPortal: React.FC<BadarPortalProps> = ({
   onNavigateToHadis40,
+  onNavigateToQuiz,
   isDarkMode = false,
   onToggleDarkMode,
   language = 'ms',
@@ -86,6 +88,17 @@ export const BadarPortal: React.FC<BadarPortalProps> = ({
               <i className="fa-solid fa-book-quran"></i> {t.navHadis40}
             </button>
 
+            {/* Butang Khas Kuiz Hadis 40 di Navbar */}
+            {onNavigateToQuiz && (
+              <button
+                onClick={onNavigateToQuiz}
+                className="neu-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 text-teal-900 dark:text-amber-300 border border-amber-500/30 hover:text-amber-600 transition"
+                title={t.navQuiz}
+              >
+                <i className="fa-solid fa-gamepad text-amber-500"></i> {t.navQuiz}
+              </button>
+            )}
+
             {/* Butang Toggle Mod Gelap */}
             {onToggleDarkMode && (
               <button
@@ -113,6 +126,18 @@ export const BadarPortal: React.FC<BadarPortalProps> = ({
 
           {/* Mobile Actions */}
           <div className="md:hidden flex items-center gap-2">
+            {onNavigateToQuiz && (
+              <button
+                onClick={onNavigateToQuiz}
+                title={t.navQuiz}
+                aria-label={t.navQuiz}
+                className="neu-btn px-2.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 text-teal-800 dark:text-amber-300"
+              >
+                <i className="fa-solid fa-gamepad text-amber-500 text-xs"></i>
+                <span>Kuiz</span>
+              </button>
+            )}
+
             {onOpenSettings && (
               <button
                 onClick={onOpenSettings}
